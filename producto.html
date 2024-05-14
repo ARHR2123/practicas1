@@ -35,4 +35,20 @@
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
+
+    //Variable constante
+    const productform = document.getElementById("form-product");
+    productform.addEventListener("submit",async(e)=>{
+        e.preventDefault();
+        await addDoc(collection(db,"1234"),{
+            nombre: productform.nombre.value,
+            precio: productform.precio.value,
+            codigo: productform.codigo.value
+        });
+
+        //Limpiar campos
+
+        productform.reset();
+    });
+
 </script>
