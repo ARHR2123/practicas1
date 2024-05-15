@@ -10,27 +10,28 @@
     <hr>
     <form id="form-product">
         <input type="text" id="nombre"placeholder="Ingrese el nombre del producto">
-        <input type="number" id="precio"placeholder="Ingrese el precio del producto">
+        <input type="text" id="precio"placeholder="Ingrese el precio del producto">
         <input type="text" id="codigo"placeholder="Ingrese el codigo del producto">
         <button type="submit">Agregar producto</button>
         <br>
-        <p>chao</p>
+        <p>chaox2</p>
     </form>
 
     <script type="module">
         // Import the functions you need from the SDKs you need
-        import { initializeApp } from "firebase/app";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+        import {getFirestore,collection,addDoc,onSnapshot,deleteDoc,doc} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
 
         // Your web app's Firebase configuration
         const firebaseConfig = {
-        apiKey: "AIzaSyChmScprYjBBfdqK6HNsx4QrNYti2tAZus",
-        authDomain: "cliente-a3b5b.firebaseapp.com",
-        projectId: "cliente-a3b5b",
-        storageBucket: "cliente-a3b5b.appspot.com",
-        messagingSenderId: "213046434000",
-        appId: "1:213046434000:web:99bd84a5802ca8939d26d5"
+            apiKey: "AIzaSyChmScprYjBBfdqK6HNsx4QrNYti2tAZus",
+            authDomain: "cliente-a3b5b.firebaseapp.com",
+            projectId: "cliente-a3b5b",
+            storageBucket: "cliente-a3b5b.appspot.com",
+            messagingSenderId: "213046434000",
+            appId: "1:213046434000:web:99bd84a5802ca8939d26d5"
         };
 
         // Initialize Firebase
