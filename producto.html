@@ -40,7 +40,7 @@
     const productform = document.getElementById("form-product");
     productform.addEventListener("submit",async(e)=>{
         e.preventDefault();
-        await addDoc(collection(db,"1234"),{
+        await addDoc(collection(db,"producto"),{
             nombre: productform.nombre.value,
             precio: productform.precio.value,
             codigo: productform.codigo.value
