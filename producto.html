@@ -14,41 +14,43 @@
         <input type="text" id="codigo"placeholder="Ingrese el codigo del producto">
         <button type="submit">Agregar producto</button>
     </form>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "firebase/app";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+    
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+        apiKey: "AIzaSyChmScprYjBBfdqK6HNsx4QrNYti2tAZus",
+        authDomain: "cliente-a3b5b.firebaseapp.com",
+        projectId: "cliente-a3b5b",
+        storageBucket: "cliente-a3b5b.appspot.com",
+        messagingSenderId: "213046434000",
+        appId: "1:213046434000:web:99bd84a5802ca8939d26d5"
+        };
+    
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+    
+        //Variable constante
+        const productform = document.getElementById("form-product");
+        productform.addEventListener("submit",async(e)=>{
+            e.preventDefault();
+            await addDoc(collection(db,"producto"),{
+                nombre: productform.nombre.value,
+                precio: productform.precio.value,
+                codigo: productform.codigo.value
+            });
+    
+            //Limpiar campos
+    
+            productform.reset();
+        });
+    
+    </script>
 </body>
 
-<script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "firebase/app";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-
-    // Your web app's Firebase configuration
-    const firebaseConfig = {
-    apiKey: "AIzaSyChmScprYjBBfdqK6HNsx4QrNYti2tAZus",
-    authDomain: "cliente-a3b5b.firebaseapp.com",
-    projectId: "cliente-a3b5b",
-    storageBucket: "cliente-a3b5b.appspot.com",
-    messagingSenderId: "213046434000",
-    appId: "1:213046434000:web:99bd84a5802ca8939d26d5"
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-
-    //Variable constante
-    const productform = document.getElementById("form-product");
-    productform.addEventListener("submit",async(e)=>{
-        e.preventDefault();
-        await addDoc(collection(db,"producto"),{
-            nombre: productform.nombre.value,
-            precio: productform.precio.value,
-            codigo: productform.codigo.value
-        });
-
-        //Limpiar campos
-
-        productform.reset();
-    });
-
-</script>
+</html>
