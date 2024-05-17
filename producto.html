@@ -10,10 +10,11 @@
     <hr>
     <form id="form-product">
         <input type="text" id="nombre"placeholder="Ingrese el nombre del producto">
-        <input type="text" id="precio"placeholder="Ingrese el precio del producto">
+        <input type="number" id="precio"placeholder="Ingrese el precio del producto">
         <input type="text" id="codigo"placeholder="Ingrese el codigo del producto">
         <button type="submit">Agregar producto</button>
         <br>
+        <h1>Hola estamos de vuelta</h1>
     </form>
 
     <script type="module">
@@ -41,7 +42,7 @@
         const productform = document.getElementById("form-product");
         productform.addEventListener("submit",async(e)=>{
             e.preventDefault();
-            await addDoc(collection(db,"producto"),{
+            await addDoc(collection(db,"Productos"),{
                 nombre: productform.nombre.value,
                 precio: productform.precio.value,
                 codigo: productform.codigo.value
